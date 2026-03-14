@@ -1,0 +1,152 @@
+/* ─────────────────────────────────────────────────────
+   ONLY styles that Bootstrap utilities cannot provide.
+   Everything else (spacing, flex, display, colors)
+   is handled by Bootstrap classes in the HTML.
+───────────────────────────────────────────────────── */
+
+/* ─── VIDEO BACKGROUND ──────────────────────────────── */
+.video-container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ─── NAVBAR BACKGROUND ─────────────────────────────── */
+/* Bootstrap doesn't provide a transparent gradient navbar bg */
+.navbar {
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, transparent 100%) !important;
+}
+
+/* ─── ORDER BUTTON (custom gradient) ───────────────── */
+/* Bootstrap's btn-warning/btn-danger don't match brand orange */
+.btn-order {
+  background: linear-gradient(90deg, #ff6b35, #f7b731);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: none;
+  box-shadow: 0 4px 14px rgba(255, 107, 53, 0.4);
+  border-radius: 50px;
+  padding: 8px 22px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 107, 53, 0.55);
+  color: #fff;
+}
+
+/* ─── HERO SECTION ──────────────────────────────────── */
+/* Bootstrap's vh-100 doesn't account for navbar offset */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  padding-top: 80px; /* offset for fixed navbar */
+}
+
+/* ─── BADGE PILL ────────────────────────────────────── */
+/* Bootstrap badge doesn't support glass border style */
+.badge-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 18px;
+  border-radius: 50px;
+}
+
+/* ─── HERO TITLE ────────────────────────────────────── */
+/* Bootstrap typography classes don't support gradient text */
+.hero-title {
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+.hero-highlight {
+  background: linear-gradient(90deg, #ff6b35, #f7b731);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── TAGLINE ───────────────────────────────────────── */
+.hero-tagline {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+}
+
+/* ─── PRIMARY BUTTON ────────────────────────────────── */
+.btn-primary-custom {
+  background: linear-gradient(90deg, #ff6b35, #f7b731);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 6px 22px rgba(255, 107, 53, 0.45);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.btn-primary-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.58);
+  color: #fff;
+}
+
+/* ─── OUTLINE BUTTON ────────────────────────────────── */
+.btn-outline-custom {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+  transition: background 0.22s, border-color 0.22s, transform 0.22s;
+}
+.btn-outline-custom:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ─── STATS BAR ─────────────────────────────────────── */
+/* Bootstrap doesn't have a frosted glass pill container */
+.stats-bar {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 60px;
+  padding: 4px 8px;
+}
+.stat-num {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+.stat-lbl {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.stat-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+}
